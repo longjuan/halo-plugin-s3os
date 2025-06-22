@@ -346,7 +346,7 @@ watch(selectedLinkedStatusItem, handleFirstPage);
               />
               <FilterDropdown
                 v-model="selectedLinkedStatusItem"
-                :label="$t('core.common.filters.labels.status')"
+                :label="t('core.common.filters.labels.status')"
                 :items="linkedStatusItems"
               />
 
@@ -356,7 +356,7 @@ watch(selectedLinkedStatusItem, handleFirstPage);
                   @click="fetchObjects()"
                 >
                   <IconRefreshLine
-                    v-tooltip="$t('core.common.buttons.refresh')"
+                    v-tooltip="t('core.common.buttons.refresh')"
                     :class="{
                       'animate-spin text-gray-900': isFetching,
                     }"
@@ -403,7 +403,7 @@ watch(selectedLinkedStatusItem, handleFirstPage);
                   </slot>
                   <VStatusDot
                     v-if="group?.metadata.deletionTimestamp"
-                    v-tooltip="$t('core.common.status.deleting')"
+                    v-tooltip="t('core.common.status.deleting')"
                     state="warning"
                     animate
                   />
