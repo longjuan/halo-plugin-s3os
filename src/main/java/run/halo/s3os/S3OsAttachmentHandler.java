@@ -314,7 +314,7 @@ public class S3OsAttachmentHandler implements AttachmentHandler {
             .credentialsProvider(() -> AwsBasicCredentials.create(properties.getAccessKey(),
                 properties.getAccessSecret()))
             .serviceConfiguration(S3Configuration.builder()
-                .chunkedEncodingEnabled(false)
+                .chunkedEncodingEnabled(Boolean.TRUE.equals(properties.getEnableChunkedEncoding()))
                 .pathStyleAccessEnabled(properties.getEnablePathStyleAccess())
                 .build())
             .build();
@@ -328,7 +328,7 @@ public class S3OsAttachmentHandler implements AttachmentHandler {
             .credentialsProvider(() -> AwsBasicCredentials.create(properties.getAccessKey(),
                 properties.getAccessSecret()))
             .serviceConfiguration(S3Configuration.builder()
-                .chunkedEncodingEnabled(false)
+                .chunkedEncodingEnabled(Boolean.TRUE.equals(properties.getEnableChunkedEncoding()))
                 .pathStyleAccessEnabled(properties.getEnablePathStyleAccess())
                 .build())
             .build();
